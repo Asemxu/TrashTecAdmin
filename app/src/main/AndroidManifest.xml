@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.tesis.trashtecadmin">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon_basura"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon_basura"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activitys.ListaDescuentosActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".Activitys.DetallePublicacionActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".Activitys.ListaPublicacionesActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".Activitys.AgregarPointsActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activitys.LoginActivity"
+            tools:ignore="InnerclassSeparator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activitys.MainActivity"
+            tools:ignore="InnerclassSeparator" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

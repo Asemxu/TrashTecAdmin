@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Activitys.DetallePublicacionActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Detalle de Publicación"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textSize="20dp"
+                android:fontFamily="@font/nunito_bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha: "
+                android:id="@+id/fecha_publicacion"
+                android:padding="10dp"
+                android:textSize="20dp"
+                android:fontFamily="@font/nunito_bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción "
+                android:id="@+id/descripcion_publicacion"
+                android:padding="10dp"
+                android:textSize="20dp"
+                android:fontFamily="@font/nunito_bold"/>
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:id="@+id/pager_fotos"
+                android:layout_height="500dp"/>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/indicator_imagenes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="16dp"
+                app:tabBackground="@drawable/indicator_selector"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/color3"
+                    android:textColor="#fff"
+                    android:id="@+id/btn_aprobar"
+                    android:layout_height="wrap_content"
+                    android:text="Aprobar"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:textColor="#fff"
+                    android:background="#ED5858"
+                    android:id="@+id/btn_eliminar"
+                    android:layout_height="wrap_content"
+                    android:text="Eliminar"/>
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Regresar"
+                android:id="@+id/btn_regresar_menu"
+                android:layout_margin="10dp"
+                android:textColor="#fff"
+                android:background="@color/color3"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

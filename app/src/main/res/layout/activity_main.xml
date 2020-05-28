@@ -36,7 +36,7 @@
         <EditText
             android:id="@+id/nombres"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:layout_margin="20dp"
             android:layout_weight="10"
             android:background="@drawable/back_buscar"
@@ -53,6 +53,34 @@
             android:id="@+id/btn_buscar"
             android:src="@drawable/search"/>
 </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:id="@+id/opciones_empresa_descuento"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/agregar_descuento"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/color2"
+            android:text="Agregar Descuento"
+            android:textAllCaps="false"
+            android:textColor="#fff" />
+        <Button
+            android:id="@+id/Descuentos"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/color2"
+            android:text="Mis Descuentos"
+            android:textAllCaps="false"
+            android:textColor="#fff" />
+    </LinearLayout>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

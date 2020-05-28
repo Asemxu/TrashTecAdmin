@@ -39,6 +39,7 @@ public class AgregarPointsActivity extends AppCompatActivity {
     TextView direccion;
     TextView usuario;
     Button cerrar_sesion;
+    Constantes constantes;
     TextView Fecha;
     String Id_publicacion;
     TextView Centro;
@@ -136,6 +137,7 @@ public class AgregarPointsActivity extends AppCompatActivity {
     private void InstanciarViews() {
         user = new User();
         userAdmin = new UserAdmin();
+        constantes = new Constantes();
         preferences = this.getSharedPreferences("datos",MODE_PRIVATE);
         userAdmin.Centro = preferences.getString("centro","");
         userAdmin.direccion = preferences.getString("direccion","");
@@ -151,8 +153,8 @@ public class AgregarPointsActivity extends AppCompatActivity {
         agregar_points = findViewById(R.id.btn_asignar_puntos);
         regresar = findViewById(R.id.btn_regresar);
         descripcion = findViewById(R.id.descripcion);
-        for(int i = 0; i<Constantes.points.length;i++){
-            lista_points.add(Constantes.points[i]);
+        for(int i = 0; i<constantes.getPoints().length;i++){
+            lista_points.add(constantes.getPoints()[i]);
         }
 
     }

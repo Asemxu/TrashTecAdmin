@@ -14,6 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.tesis.trashtecadmin.Activitys.AgregarDescuentoActivity;
 import com.tesis.trashtecadmin.Helper.Constantes;
 import com.tesis.trashtecadmin.Helper.Firebase_Variables;
 import com.tesis.trashtecadmin.Activitys.LoginActivity;
@@ -23,7 +24,11 @@ import com.tesis.trashtecadmin.Models.UserAdmin;
 public class Validation {
     private TextInputLayout username;
     private TextInputLayout pass;
+    private TextInputLayout titulo;
+    private TextInputLayout descripcion;
+    private TextInputLayout cantidad_descuento;
     private LoginActivity loginActivity;
+    private AgregarDescuentoActivity agregarDescuentoActivity;
     private String tipo_empresa;
     private Context context;
     private DatabaseReference databaseReference = Firebase_Variables.databaseReference;
@@ -35,6 +40,45 @@ public class Validation {
         this.context = context;
         this.pass = pass;
     }
+    public Validation(Context context, AgregarDescuentoActivity agregarDescuentoActivity,TextInputLayout titulo,
+                      TextInputLayout descripcion,TextInputLayout cantidad_descuento){
+        this.context = context;
+        this.agregarDescuentoActivity = agregarDescuentoActivity;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.cantidad_descuento = cantidad_descuento;
+    }
+    public boolean IsValidoDescuento(){
+        ValidarTitulo(titulo.getEditText().getText().toString());
+        ValidarDescripcion(descripcion.getEditText().getText().toString());
+        ValidarDescuento(cantidad_descuento.getEditText().getText().toString());
+        return cantidad_errores == 0;
+    }
+
+    private void ValidarDescuento(String cantidad_descuento) {
+        if(cantidad_descuento.isEmpty()) {
+            cantidad_errores++;
+            this.cantidad_descuento.setError("La cantidad de descuento es obligatoria");
+        }else
+            this.cantidad_descuento.setError(null);
+    }
+
+    private void ValidarDescripcion(String descripcion) {
+        if(descripcion.isEmpty()){
+            cantidad_errores++;
+            this.descripcion.setError("La descripción no puede estar vacia");
+        }else
+            this.descripcion.setError(null);
+    }
+
+    private void ValidarTitulo(String titulo) {
+        if(titulo.isEmpty()|| titulo.length()>50){
+            cantidad_errores++;
+            this.titulo.setError("El Titulo no puede estar vacio ni puede contener mas de 50 caracteres");
+        }else
+            this.titulo.setError(null);
+    }
+
     public  boolean IsValido(){
         ValidarUsername(username.getEditText().getText().toString());
         ValidarContra(pass.getEditText().getText().toString());
@@ -82,7 +126,6 @@ public class Validation {
                 UserAdmin usuario = null;
                 boolean encontradoo_ususario = false,valido_contraseña = false;
                 for(DataSnapshot data:dataSnapshot.getChildren()){
-                    Log.i("Informacion",data.getValue().toString());
                     UserAdmin userAdmin = data.getValue(UserAdmin.class);
                     if(username.getEditText().getText().toString().equals(userAdmin.Usuario)){
                         encontradoo_ususario = true;
@@ -116,6 +159,7 @@ public class Validation {
                             }
                         }
                         editor.putString("tipo_empresa",tipo_empresa);
+                        editor.putString("Id_Empresa",usuario.Id);
                         editor.apply();
                         Intent mains_user_admin;
                         mains_user_admin = new Intent(loginActivity, MainActivity.class);

@@ -12,13 +12,18 @@
         android:roundIcon="@drawable/icon_basura"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activitys.ListaDescuentosActivity"
+        <activity android:name=".Activitys.AgregarDescuentoActivity"></activity>
+        <activity
+            android:name=".Activitys.ListaDescuentosActivity"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".Activitys.DetallePublicacionActivity"
+        <activity
+            android:name=".Activitys.DetallePublicacionActivity"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".Activitys.ListaPublicacionesActivity"
+        <activity
+            android:name=".Activitys.ListaPublicacionesActivity"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".Activitys.AgregarPointsActivity"
+        <activity
+            android:name=".Activitys.AgregarPointsActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Activitys.LoginActivity"

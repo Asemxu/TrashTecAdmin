@@ -5,5 +5,6 @@ public class UserAdmin {
     public String Contraseña;
     public String direccion;
     public String Centro;
+    public String Id;
     public UserAdmin(){}
 }

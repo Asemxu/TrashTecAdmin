@@ -57,18 +57,19 @@ public class DescuentoAdapter extends ArrayAdapter {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater= LayoutInflater.from(context);
         convertView=inflater.inflate(resource,parent,false);
-        ImageView imgdescuento = convertView.findViewById(R.id.imagen_descuento);
-        TextView title = convertView.findViewById(R.id.titulo_descuento);
-        TextView contenido = convertView.findViewById(R.id.contenido_descuento);
-        TextView cantidad_descuento = convertView.findViewById(R.id.cantidad_descuento);
-        Button btn_eliminar_descuento = convertView.findViewById(R.id.btn_eliminar_descuento);
+        View nuevo = convertView;
+        ImageView imgdescuento = nuevo.findViewById(R.id.imagen_descuento);
+        TextView title = nuevo.findViewById(R.id.titulo_descuento);
+        TextView contenido = nuevo.findViewById(R.id.contenido_descuento);
+        TextView cantidad_descuento = nuevo.findViewById(R.id.cantidad_descuento);
+        Button btn_eliminar_descuento = nuevo.findViewById(R.id.btn_eliminar_descuento);
         Descuentos descuento = descuentos.get(position);
         title.setText(descuento.Titulo);
         contenido.setText(descuento.Contenido);
         EliminarDescuento(btn_eliminar_descuento,keys.get(position));
         Picasso.get().load(descuento.Imagen).into(imgdescuento);
         cantidad_descuento.setText(""+descuento.descuento+"%");
-        return convertView;
+        return nuevo;
     }
 
     private void EliminarDescuento(Button btn_eliminar_descuento, String key) {

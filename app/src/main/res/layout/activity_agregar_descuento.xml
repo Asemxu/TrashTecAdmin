@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.MaterialComponents.Light"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Activitys.AgregarDescuentoActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Agregar Descuento"
+            android:textColor="#000"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="30dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:errorEnabled="true"
+            android:id="@+id/Titulo">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Titulo"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:layout_margin="10dp"
+            app:counterEnabled="true"
+            android:id="@+id/descripcion_descuento">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripcion"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:layout_margin="10dp"
+            app:counterEnabled="true"
+            android:id="@+id/cantidad_descuento_puntos">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cantidad de Descuento"
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/spinner_points_descuento"
+            app:ms_arrowColor="@color/color3"
+            app:ms_arrowSize="16dp"
+            app:ms_hintColor="#000"
+            app:ms_floatingLabelColor="@color/color3"
+            app:ms_floatingLabelText="Seleccione la cantidad de puntos "
+            app:ms_hint="Cantidad de Puntos"
+            app:ms_multiline="true"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:id="@+id/btn_agregar_descuento"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:background="@color/color3"
+            android:backgroundTint="@color/color3"
+            android:text="Agregar Descuento"
+            android:textAllCaps="true"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:id="@+id/btn_regresar_descuento"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:background="@color/color3"
+            android:backgroundTint="@color/color3"
+            android:text="Regresar"
+            android:textAllCaps="true"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -3,6 +3,7 @@ package com.tesis.trashtecadmin.Adapter;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +50,7 @@ public class ImagenesAdapter extends PagerAdapter {
                 foto_publicacion.setImageBitmap(bitmap);
             }).addOnFailureListener(e -> Toast.makeText(mContext,e.getMessage(),Toast.LENGTH_LONG).show());
         }catch (Exception ex){
-            ex.printStackTrace();
+            Log.i("Error", ex.getMessage());
         }
     }
     @Override

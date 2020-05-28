@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'org.sonarqube'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -26,6 +27,19 @@ android {
     }
 
 }
+/*sonarqube {
+    properties{
+        property "sonar.projectName","TrashTecAdmin"
+        property "sonar.projectKey","TrashTecAdmin"
+        property "sonar.host.url","http://127.0.0.1:9000"
+        property "sonar.languaje","java"
+        property "sonar.sources","src/main/java"
+        property "sonar.java.sources","src/main/java"
+        property "sonar.sourceEncoding","UTF-8"
+        property "sonar.login","admin"
+        property "sonar.password","admin"
+    }
+}*/
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -43,5 +57,5 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.google.firebase:firebase-analytics:17.4.1'
+    implementation 'com.google.firebase:firebase-analytics:17.4.2'
 }
